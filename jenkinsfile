@@ -8,8 +8,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                withCredentials(credentialsId: 'cicd-project-password-id')
-                    sh 'sudo -s docker build -t my-image-test:latest .'
+                sh 'docker build -t my-image-test:latest .'
             }
         }
         stage('Deploy') {
